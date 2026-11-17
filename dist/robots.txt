@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://souqkhalij.com/sitemap.xml
+Sitemap: https://souqkhalij.com/sitemap-index.xml

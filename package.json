@@ -1,0 +1,24 @@
+{
+  "name": "souqkhalij-iptv",
+  "version": "1.0.0",
+  "description": "High-Performance Gulf IPTV 4K Static Platform (3,057 pages)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node serve.mjs 3025",
+    "audit": "node scripts/audit_technical_seo.mjs",
+    "ping": "node scripts/seo_ping.mjs",
+    "test": "node scripts/audit_technical_seo.mjs"
+  },
+  "keywords": [
+    "iptv",
+    "khalij",
+    "gulf",
+    "streaming",
+    "seo",
+    "static-site-generator"
+  ],
+  "author": "Souq Khalij",
+  "license": "UNLICENSED"
+}
+

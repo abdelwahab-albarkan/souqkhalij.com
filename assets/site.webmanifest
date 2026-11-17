@@ -1,0 +1,18 @@
+{
+  "name": "سوق الخليج - دليل واشتراك IPTV 4K",
+  "short_name": "سوق الخليج IPTV",
+  "description": "دليل واشتراك سيرفر IPTV 4K بدون تقطيع في السعودية والإمارات والخليج",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
