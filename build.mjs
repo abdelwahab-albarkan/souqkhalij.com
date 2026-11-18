@@ -523,7 +523,18 @@ const headersContent = `/*
   Cache-Control: public, max-age=31536000, immutable
 `;
 fs.writeFileSync(path.join(out, "_headers"), headersContent);
-fs.writeFileSync(path.join(out, "_redirects"), "/404    /404.html   404\n");
+
+const redirectsContent = `# Legacy Dropped Domain / Old Shopify 301 Redirects
+/pages/contact-us   /iptv-contact/   301
+/pages/contact      /iptv-contact/   301
+/contact-us         /iptv-contact/   301
+/contact            /iptv-contact/   301
+/pages/*            /                301
+/collections/*      /iptv-prices/    301
+/products/*         /iptv-prices/    301
+/404                /404.html        404
+`;
+fs.writeFileSync(path.join(out, "_redirects"), redirectsContent);
 
 // keyword map
 const csvq = (s) => `"${String(s).replace(/"/g, '""')}"`;

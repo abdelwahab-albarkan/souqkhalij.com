@@ -1,1 +1,9 @@
-/404    /404.html   404
+# Legacy Dropped Domain / Old Shopify 301 Redirects
+/pages/contact-us   /iptv-contact/   301
+/pages/contact      /iptv-contact/   301
+/contact-us         /iptv-contact/   301
+/contact            /iptv-contact/   301
+/pages/*            /                301
+/collections/*      /iptv-prices/    301
+/products/*         /iptv-prices/    301
+/404                /404.html        404

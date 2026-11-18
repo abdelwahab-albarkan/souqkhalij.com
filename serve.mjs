@@ -30,6 +30,32 @@ const server = http.createServer((q, r) => {
     return r.end("403 Forbidden");
   }
 
+  // Legacy Dropped Domain / Old Shopify 301 Redirects
+  if (p === "/pages/contact-us" || p === "/pages/contact-us/" || p === "/pages/contact" || p === "/pages/contact/" || p === "/contact-us" || p === "/contact-us/" || p === "/contact" || p === "/contact/") {
+    r.writeHead(301, {
+      Location: `/iptv-contact/${query}`,
+      "Cache-Control": "public, max-age=31536000",
+      "content-type": "text/plain; charset=utf-8"
+    });
+    return r.end(`301 Redirecting to /iptv-contact/${query}`);
+  }
+  if (p.startsWith("/collections/") || p.startsWith("/products/")) {
+    r.writeHead(301, {
+      Location: `/iptv-prices/${query}`,
+      "Cache-Control": "public, max-age=31536000",
+      "content-type": "text/plain; charset=utf-8"
+    });
+    return r.end(`301 Redirecting to /iptv-prices/${query}`);
+  }
+  if (p.startsWith("/pages/")) {
+    r.writeHead(301, {
+      Location: `/${query}`,
+      "Cache-Control": "public, max-age=31536000",
+      "content-type": "text/plain; charset=utf-8"
+    });
+    return r.end(`301 Redirecting to /${query}`);
+  }
+
   // Trailing slash normalization for directories (SEO 301 Permanent Redirect)
   try {
     if (fs.existsSync(f)) {

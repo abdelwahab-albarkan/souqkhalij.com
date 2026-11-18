@@ -218,6 +218,16 @@ try {
   } else {
     fail("Edge Headers", "Missing _headers");
   }
+  if (fs.existsSync(path.join(dist, "_redirects"))) {
+    const red = fs.readFileSync(path.join(dist, "_redirects"), "utf8");
+    if (red.includes("/pages/contact-us") && red.includes("/iptv-contact/")) {
+      pass("Legacy 301 Redirects", "Old Shopify URLs redirect permanently to new IPTV pages");
+    } else {
+      fail("Legacy 301 Redirects", "Missing contact redirects in _redirects");
+    }
+  } else {
+    fail("Legacy 301 Redirects", "Missing _redirects file");
+  }
 } catch (e) {
   fail("Assets verification", e.message);
 }
